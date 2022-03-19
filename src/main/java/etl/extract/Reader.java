@@ -1,2 +1,5 @@
-package etl;public class Reader {
+package etl.extract;
+
+public interface Reader {
+    Object read();
 }
