@@ -1,4 +1,4 @@
-package models;
+package models.madaReports;
 
 public class MadaReports {
     private String mdaCode;
@@ -13,6 +13,22 @@ public class MadaReports {
     private String getDate;
     private String takeDate;
     private String resultDate;
+
+    public MadaReports(String mdaCode, String idNum, int idType, String firstName, String lastName, String city, String street, int buildingNumber,
+    String barCode, String  getDate, String takeDate, String resultDate) {
+        this.mdaCode = mdaCode;
+        this.idNum = idNum;
+        this.idType = idType;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.city = city;
+        this.street = street;
+        this.buildingNumber = buildingNumber;
+        this.barCode = barCode;
+        this.getDate = getDate;
+        this.takeDate = takeDate;
+        this.resultDate = resultDate;
+    }
 
     public String getMdaCode() {
         return mdaCode;
