@@ -1,4 +1,4 @@
-package etl.load.file;
+package models.labTests.load.file;
 
 import java.util.List;
 

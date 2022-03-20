@@ -2,7 +2,7 @@ package etl;
 
 import com.google.common.io.Files;
 import etl.extract.Extract;
-import etl.load.Load;
+import models.labTests.load.Load;
 
 import javax.xml.crypto.dsig.Transform;
 import java.io.File;
@@ -23,8 +23,8 @@ public class EtlManager {
         this.loadHashMap = loadHashMap;
     }
 
-    public List extractTheFile(String fromFile) throws IOException {
-        return extractHashMap.get(getExtensionByGuava(fromFile)).extract(fromFile);
+    public List extractTheFile(String fromFile, String objectName) throws IOException {
+        return extractHashMap.get(getExtensionByGuava(fromFile)).extract(fromFile, objectName);
     }
 
     public void loadToFile(String toDirectoryName, List listOfObjects, String typeOfFile) throws IOException {
@@ -32,8 +32,8 @@ public class EtlManager {
         loadHashMap.get(typeOfFile).load("C:\\" + toDirectoryName + "\\" + toDirectoryName + "1", listOfObjects);
     }
 
-    public void  process(String fromFile, String toDirectoryName, String typeOfFile) throws IOException {
-        loadToFile(toDirectoryName, extractTheFile(fromFile), typeOfFile);
+    public void  process(String fromFile, String objectName, String toDirectoryName, String typeOfFile) throws IOException {
+        loadToFile(toDirectoryName, extractTheFile(fromFile, objectName), typeOfFile);
     }
 
     public String getExtensionByGuava(String filename) {

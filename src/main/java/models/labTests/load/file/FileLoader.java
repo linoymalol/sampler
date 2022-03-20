@@ -1,7 +1,7 @@
-package etl.load.file;
+package models.labTests.load.file;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import etl.load.Load;
+import models.labTests.load.Load;
 
 import java.io.File;
 import java.io.IOException;

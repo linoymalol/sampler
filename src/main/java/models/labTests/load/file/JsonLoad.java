@@ -1,6 +1,4 @@
-package etl.load.file;
-
-import etl.load.file.FileLoader;
+package models.labTests.load.file;
 
 import java.io.IOException;
 import java.util.List;

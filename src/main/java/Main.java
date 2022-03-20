@@ -1,19 +1,13 @@
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import etl.EtlManager;
 import etl.extract.Extract;
 import etl.extract.csv.CsvExtract;
-import etl.load.JsonLoad;
-import etl.load.Load;
-import etl.load.XmlLoad;
-import models.madaReports.MadaReports;
-import models.madaReports.MadaReportsParser;
+import models.labTests.load.file.JsonLoad;
+import models.labTests.load.Load;
+import models.labTests.load.file.XmlLoad;
 
 import javax.xml.crypto.dsig.Transform;
 import java.util.HashMap;
-import java.util.Properties;
 import java.io.IOException;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -24,6 +18,7 @@ public class Main {
         HashMap<String, Extract> extractHashMap = new HashMap<>();
         HashMap<String, Transform> transformHashMap = new HashMap<>();
         HashMap<String, Load> loadHashMap = new HashMap<>();
+
         CsvExtract csvExtract= new CsvExtract();
         extractHashMap.put("csv", csvExtract);
         JsonLoad jsonLoad = new JsonLoad();
@@ -32,8 +27,8 @@ public class Main {
         loadHashMap.put("xml", xmlLoad);
         EtlManager etlManager = new EtlManager(extractHashMap, transformHashMap, loadHashMap);
         try {
-            etlManager.process("src\\main\\resources\\MadaReports.csv", "madda", "json");
-            //etlManager.process("src\\main\\resources\\MadaReports.csv", "mada", "xml");
+            etlManager.process("src\\main\\resources\\MadaReports.csv", "MadaReports", "madda", "json");
+            etlManager.process("src\\main\\resources\\LabTests.csv", "LabTests", "lab", "xml");
         } catch (IOException e) {
             e.printStackTrace();
         }

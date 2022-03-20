@@ -30,6 +30,9 @@ public class MadaReports {
         this.resultDate = resultDate;
     }
 
+    public MadaReports(String mdaCode, String idNum, int idType, String firstName, String lastName, String city, String street, int buildingNumber, String barCode, String getDate, String takeDate) {
+    }
+
     public String getMdaCode() {
         return mdaCode;
     }
