@@ -1,6 +1,7 @@
-package etl.load;
+package etl.load.file;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import etl.load.Load;
 
 import java.io.File;
 import java.io.IOException;

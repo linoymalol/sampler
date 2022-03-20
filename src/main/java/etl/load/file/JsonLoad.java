@@ -1,4 +1,6 @@
-package etl.load;
+package etl.load.file;
+
+import etl.load.file.FileLoader;
 
 import java.io.IOException;
 import java.util.List;
