@@ -2,7 +2,7 @@ package etl;
 
 import com.google.common.io.Files;
 import etl.extract.Extract;
-import models.labTests.load.Load;
+import etl.load.Load;
 
 import javax.xml.crypto.dsig.Transform;
 import java.io.File;

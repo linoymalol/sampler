@@ -1,4 +1,4 @@
-package models.labTests.load;
+package etl.load;
 
 import java.io.IOException;
 import java.util.List;

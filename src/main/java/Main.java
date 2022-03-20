@@ -1,9 +1,9 @@
 import etl.EtlManager;
 import etl.extract.Extract;
 import etl.extract.csv.CsvExtract;
-import models.labTests.load.file.JsonLoad;
-import models.labTests.load.Load;
-import models.labTests.load.file.XmlLoad;
+import etl.load.file.JsonLoad;
+import etl.load.Load;
+import etl.load.file.XmlLoad;
 
 import javax.xml.crypto.dsig.Transform;
 import java.util.HashMap;
