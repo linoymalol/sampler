@@ -19,7 +19,7 @@ public class Main {
     public static void main(String[] args) {
         /*
         //Properties properties = new Properties();
-        //madaReports = csvExtract.extract(properties.getProperty("MadaReportsCsvPath"));
+        //properties.getProperty("MadaReportsCsvPath"));
         */
         HashMap<String, Extract> extractHashMap = new HashMap<>();
         HashMap<String, Transform> transformHashMap = new HashMap<>();
@@ -32,7 +32,7 @@ public class Main {
         loadHashMap.put("xml", xmlLoad);
         EtlManager etlManager = new EtlManager(extractHashMap, transformHashMap, loadHashMap);
         try {
-            etlManager.process("src\\main\\resources\\MadaReports.csv", "madda", "json");
+            etlManager.process("src\\main\\resources\\MadaReports.csv", "mada_reports", "json");
             //etlManager.process("src\\main\\resources\\MadaReports.csv", "mada", "xml");
         } catch (IOException e) {
             e.printStackTrace();
